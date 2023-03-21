@@ -1,0 +1,17 @@
+extends layout 
+
+block content
+    h2 Welcome #{user.fname}
+    ul 
+        li Name: #{user.fname} #{user.surname} 
+        li Age: #{user.age}
+        li Email: #{user.email}
+
+    form(action="/users/form", method="post")     
+        label(for="fname") First name: 
+        input(type="text", id='fname', name="fname")
+        label(for="lname") Last name: 
+        input(type="text", id='lname', name="lname")
+        input(type="submit", value="Submit")
+
+    include includes/footer.pug
